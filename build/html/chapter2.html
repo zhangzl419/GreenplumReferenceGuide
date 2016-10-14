@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>第2章 SQL命令参考 &#8212; Pivotal Greenplum 数据库参考指南 A12 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'A12',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Pivotal Greenplum 数据库参考指南 A12 documentation" href="index.html" />
+    <link rel="next" title="表格" href="test.html" />
+    <link rel="prev" title="第1章 前言" href="chapter1.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sql">
+<h1>第2章 SQL命令参考<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>Greenplum数据库中可以使用如下的SQL命令：</p>
+<ul class="simple">
+<li><a class="reference internal" href="#abort"><span class="std std-ref">ABORT</span></a></li>
+<li><a class="reference internal" href="#alter-aggregate"><span class="std std-ref">ALTER AGGREGATE</span></a></li>
+<li><a class="reference internal" href="#alter-conversion"><span class="std std-ref">ALTER CONVERSION</span></a></li>
+<li>ALTER DATABASE</li>
+<li>ALTER DOMAIN</li>
+<li>ALTER EXTERNAL TABLE</li>
+<li>ALTER FILESPACE</li>
+<li>ALTER FOREIGN DATA WRAPPER*</li>
+<li>ALTER FOREIGN TABLE*</li>
+<li>ALTER FUNCTION</li>
+<li>ALTER GROUP</li>
+<li>ALTER INDEX</li>
+<li>ALTER LANGUAGE</li>
+<li>ALTER OPERATOR</li>
+<li>ALTER OPERATOR CLASS</li>
+<li>ALTER PROTOCOL</li>
+<li>ALTER RESOURCE QUEUE</li>
+<li>ALTER ROLE</li>
+<li>ALTER SCHEMA</li>
+<li>ALTER SEQUENCE</li>
+<li>ALTER SERVER*</li>
+<li>ALTER TABLE</li>
+<li>ALTER TABLESPACE</li>
+<li>ALTER TYPE</li>
+<li>ALTER USER</li>
+<li>ALTER USER MAPPING*</li>
+<li>ANALYZE</li>
+<li>BEGIN</li>
+<li>CHECKPOINT</li>
+<li>CLOSE</li>
+<li>CLUSTER</li>
+<li>COMMENT</li>
+<li>COMMIT</li>
+<li>COPY</li>
+<li>CREATE AGGREGATE</li>
+<li>CREATE CAST</li>
+<li>CREATE CONVERSION</li>
+<li>CREATE DATABASE</li>
+<li>CREATE DOMAIN</li>
+<li>CREATE EXTERNAL TABLE</li>
+<li>CREATE FOREIGN DATA WRAPPER*</li>
+<li>CREATE FOREIGN TABLE*</li>
+<li>CREATE FUNCTION</li>
+<li>CREATE GROUP</li>
+<li>CREATE INDEX</li>
+<li>CREATE LANGUAGE</li>
+<li>CREATE OPERATOR</li>
+<li>CREATE OPERATOR CLASS</li>
+<li>CREATE RESOURCE QUEUE</li>
+<li>CREATE ROLE</li>
+<li>CREATE RULE</li>
+<li>CREATE SCHEMA</li>
+<li>CREATE SEQUENCE</li>
+<li>CREATE SERVER*</li>
+<li>CREATE TABLE</li>
+<li>CREATE TABLE AS</li>
+<li>CREATE TABLESPACE</li>
+<li>CREATE TYPE</li>
+<li>CREATE USER</li>
+<li>CREATE USER MAPPING*</li>
+<li>CREATE VIEW</li>
+<li>DEALLOCATE</li>
+<li>DECLARE</li>
+<li>DELETE</li>
+<li>DROP AGGREGATE</li>
+<li>DROP CAST</li>
+<li>DROP CONVERSION</li>
+<li>DROP DATABASE</li>
+<li>DROP DOMAIN</li>
+<li>DROP EXTERNAL TABLE</li>
+<li>DROP FILESPACE</li>
+<li>DROP FOREIGN DATA WRAPPER*</li>
+<li>DROP FOREIGN TABLE*</li>
+<li>DROP FUNCTION</li>
+<li>DROP GROUP</li>
+<li>DROP INDEX</li>
+<li>DROP LANGUAGE</li>
+<li>DROP OPERATOR</li>
+<li>DROP OPERATOR CLASS</li>
+<li>DROP OWNED</li>
+<li>DROP RESOURCE QUEUE</li>
+<li>DROP ROLE</li>
+<li>DROP RULE</li>
+<li>DROP SCHEMA</li>
+<li>DROP SEQUENCE</li>
+<li>DROP SERVER*</li>
+<li>DROP TABLE</li>
+<li>DROP TABLESPACE</li>
+<li>DROP TYPE</li>
+<li>DROP USER</li>
+<li>DROP USER MAPPING*</li>
+<li>DROP VIEW</li>
+<li>END</li>
+<li>EXECUTE</li>
+<li>EXPLAIN</li>
+<li>FETCH</li>
+<li>GRANT</li>
+<li>INSERT</li>
+<li>LOAD</li>
+<li>LOCK</li>
+<li>MOVE</li>
+<li>PREPARE</li>
+<li>REASSIGN OWNED</li>
+<li>REINDEX</li>
+<li>RELEASE SAVEPOINT</li>
+<li>RESET</li>
+<li>REVOKE</li>
+<li>ROLLBACK</li>
+<li>ROLLBACK TO SAVEPOINT</li>
+<li>SAVEPOINT</li>
+<li>SELECT</li>
+<li>SELECT INTO</li>
+<li>SET</li>
+<li>SET ROLE</li>
+<li>SET SESSION AUTHORIZATION</li>
+<li>SET TRANSACTION</li>
+<li>SHOW</li>
+<li>START TRANSACTION</li>
+<li>TRUNCATE</li>
+<li>UPDATE</li>
+<li>VACUUM</li>
+<li>VALUES</li>
+</ul>
+</div></blockquote>
+<p>Not implemented in 4.3</p>
+<div class="section" id="id1">
+<h2>2.1 SQL语法概要<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><strong>ABORT</strong></p>
+<p>中断当前事务。</p>
+<p>ABORT [WORK | TRANSACTION]</p>
+<p>详见 <a class="reference internal" href="#abort"><span class="std std-ref">ABORT</span></a></p>
+<p><strong>ALTER AGGREGATE</strong></p>
+<p>改变聚集函数的定义。</p>
+<p>ALTER AGGREGATE name ( type [ , ... ] ) RENAME TO new_name</p>
+<p>ALTER AGGREGATE name ( type [ , ... ] ) OWNER TO new_owner</p>
+<p>ALTER AGGREGATE name ( type [ , ... ] ) SET SCHEMA new_schema</p>
+<p>详见 <a class="reference internal" href="#alter-aggregate"><span class="std std-ref">ALTER AGGREGATE</span></a></p>
+<p><strong>ALTER CONVERSION</strong></p>
+<p>改变转换的定义。</p>
+<p>ALTER CONVERSION name RENAME TO newname</p>
+<p>ALTER CONVERSION name OWNER TO newowner</p>
+<p>详见 <a class="reference internal" href="#alter-conversion"><span class="std std-ref">ALTER CONVERSION</span></a></p>
+</div>
+<div class="section" id="abort">
+<span id="id2"></span><h2>2.2 ABORT<a class="headerlink" href="#abort" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>中断当前事务。</p>
+<p><strong>语法</strong></p>
+<p>ABORT [WORK | TRANSACTION]</p>
+<p><strong>描述</strong></p>
+<p>ABORT回退当前的事务，丢弃由当前事务引起的所有修改。这个命令和标准的SQL命令ROLLBACK完全相同，保留下来完全是历史原因。</p>
+<p><strong>参数</strong></p>
+<p>WORK</p>
+<p>TRANSACTION</p>
+<p>可选关键字，他们不起作用。</p>
+<p><strong>注解</strong></p>
+<p>请使用COMMIT去成功终止一个事务。</p>
+<p>当不在一个事务内部时，发出ABORT没有危害，但是会引出一条警告信息。</p>
+<p><strong>兼容性</strong></p>
+<p>这个命令是一个Greenplum数据库的扩展，由于历史原因而保留下来。ROLLBACK是和它相当的SQL标准命令。</p>
+<p><strong>参考</strong></p>
+<p>BEGIN, COMMIT, ROLLBACK</p>
+</div></blockquote>
+</div>
+<div class="section" id="alter-aggregate">
+<span id="id3"></span><h2>2.3 ALTER AGGREGATE<a class="headerlink" href="#alter-aggregate" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>改变聚集函数的定义。</p>
+<p><strong>语法</strong></p>
+<p>ALTER AGGREGATE name ( type [ , ... ] ) RENAME TO new_name
+ALTER AGGREGATE name ( type [ , ... ] ) OWNER TO new_owner
+ALTER AGGREGATE name ( type [ , ... ] ) SET SCHEMA new_schema</p>
+<p><strong>描述</strong></p>
+<p>ALTER AGGREGATE 改变聚集函数的定义。</p>
+<p>在用ALTER AGGREGATE改变一个函数的定义之前，必须拥有这个函数。如果改变一个聚集函数的模式，必须在这个模式上有CREATE权限。如果改变函数的拥有者，必须直接或者间接地是新的拥有者中的一员，并且这个新的拥有者必须有这个聚集函数的模式的CREATE权限。（有了这些规定，当你删除然后重建聚集函数做不了的事情，通过修改聚集函数拥有者也做不了。然而，超级用户无论如何都可以修改一个聚集函数的拥有者。）</p>
+<p><strong>参数</strong></p>
+<p>name</p>
+<p>已经存在的聚集函数的名字，可以用模式限定。</p>
+<p>type</p>
+<p>聚集函数在其上操作的一个输入数据类型。如果想引用一个没有参数的聚集函数，用*来替换输入数据类型列表。</p>
+<p>new_name</p>
+<p>聚集函数的新名字。</p>
+<p>new_owner</p>
+<p>聚集函数的新所有者。</p>
+<p>new_schema</p>
+<p>聚集函数的新模式。</p>
+<p><strong>示例</strong></p>
+<p>重命名一个integer类型的聚集函数myavg为my_average:</p>
+<p>ALTER AGGREGATE myavg(integer) RENAME TO my_average;</p>
+<p>把integer类型的聚集函数myavg的所有者修改为joe：</p>
+<p>ALTER AGGREGATE myavg(integer) OWNER TO joe;</p>
+<p>把integer类型的聚集函数myavg移动到myschema模式下:</p>
+<p>ALTER AGGREGATE myavg(integer) SET SCHEMA myschema;</p>
+<p><strong>兼容性</strong></p>
+<p>SQL标准中没有ALTER AGGREGATE语句。</p>
+<p><strong>参考</strong></p>
+<p>CREATE AGGREGAT, DROP AGGREGATE</p>
+</div></blockquote>
+</div>
+<div class="section" id="alter-conversion">
+<span id="id4"></span><h2>2.4 ALTER CONVERSION<a class="headerlink" href="#alter-conversion" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>修改转换的定义。</p>
+<p><strong>语法</strong></p>
+<p>ALTER CONVERSION name RENAME TO newname</p>
+<p>ALTER CONVERSION name OWNER TO newowner</p>
+<p><strong>描述</strong></p>
+<p>ALTER CONVERSION用来改变一个转换的定义。</p>
+<p>只有转换的拥有者才能修改转换。只有新的拥有者中的一员，才能修改拥有者为新的拥有者，这个新的拥有者还得拥有这个转换所在模式的CREATE权限。（有了这些规定，当你删除然后重建转换做不了的事情，通过修改转换的拥有者也做不了。然而，超级用户无论如何都可以修改一个转换的拥有者。）</p>
+<p><strong>参数</strong></p>
+<p>Name</p>
+<p>要修改的转换的名字，可以用模式限定。</p>
+<p>new_name</p>
+<p>转换的新名字。</p>
+<p>Newowner</p>
+<p>转换的新所有者。</p>
+<p><strong>示例</strong></p>
+<p>修改转换iso_8859_1_to_utf8的名字为latin1_to_unicode:</p>
+<p>ALTER CONVERSION iso_8859_1_to_utf8 RENAME TO latin1_to_unicode;</p>
+<p>将iso_8859_1_to_utf8的拥有者修改为joe：</p>
+<p>ALTER CONVERSION iso_8859_1_to_utf8 OWNER TO joe;</p>
+<p><strong>兼容性</strong></p>
+<p>标准SQL中不存在ALTER CONVERSION语句。</p>
+<p><strong>参考</strong></p>
+<p>CREATE CONVERSION, DROP CONVERSION</p>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">第2章 SQL命令参考</a><ul>
+<li><a class="reference internal" href="#id1">2.1 SQL语法概要</a></li>
+<li><a class="reference internal" href="#abort">2.2 ABORT</a></li>
+<li><a class="reference internal" href="#alter-aggregate">2.3 ALTER AGGREGATE</a></li>
+<li><a class="reference internal" href="#alter-conversion">2.4 ALTER CONVERSION</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="chapter1.html" title="previous chapter">第1章 前言</a></li>
+      <li>Next: <a href="test.html" title="next chapter">表格</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/chapter2.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Pivotal.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/chapter2.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
