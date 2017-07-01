@@ -20,4 +20,4 @@
 * Greenplum的用户
 * Greenplum的管理员
 * 基于Greenplum做开发的开发人员
-* 其他队MPP数据库感兴趣的读者
+* Greenplum的学习者
