@@ -1,1 +1,18 @@
-## welcome, This is the Greenplum reference guide translation in chinese project.
+！[GreenplumLogo]
+
+欢迎来到《Greenplum参考手册》的主页
+=================================
+
+***
+
+本书的主要内容
+=============
+
+《Greenplum参考手册》主要介绍了Greenplum中的
+* SQL命令
+* 系统类别
+* 环境变量
+* 服务器配置参数
+* 字符集
+* 数据类型
+* Greenplum的扩展等内容。
