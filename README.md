@@ -1,4 +1,5 @@
-欢迎访问《Greenplum参考手册》（http://greenplumreferenceguide.readthedocs.io/zh_CN/latest/）
+欢迎访问《Greenplum参考手册》
+http://greenplumreferenceguide.readthedocs.io/zh_CN/latest/
 ===========================================================================================
 
 
@@ -20,3 +21,5 @@
 * Greenplum的管理员
 * 基于Greenplum做开发的开发人员
 * Greenplum的学习者
+
+详情请访问 http://greenplumreferenceguide.readthedocs.io/zh_CN/latest/
